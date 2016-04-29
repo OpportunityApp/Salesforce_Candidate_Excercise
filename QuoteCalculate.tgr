@@ -1,0 +1,21 @@
+trigger QuoteCalculate on Opportunity (before insert, before update) {
+    if(Trigger.isInsert){
+        for(Opportunity opport:Trigger.New){
+           
+               opport.Quote__c =  ((opport.amount)*(100-Integer.valueOf(Label.Quote_Discount)))/100;	
+            
+            
+        }
+        
+    }
+     if(Trigger.isUpdate){
+        for(Opportunity opport:Trigger.New){
+            if(opport.amount!=(Trigger.OldMap.get(opport.Id).amount)){
+               opport.Quote__c =  ((opport.amount)*(100-Integer.valueOf(Label.Quote_Discount)))/100;	
+            }
+            
+        }
+        
+    }
+    
+}

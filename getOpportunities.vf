@@ -1,0 +1,28 @@
+<apex:page controller="Opportunity_Controller">
+<apex:form >
+  <!-- Begin Default Content REMOVE THIS -->
+   <apex:outputPanel id="mainPanel">
+   <apex:PageBlock >
+                        <apex:pageBlockSection columns="1" id="pbsecs">
+                            <apex:outputPanel id="dataPanel">
+                                            
+                             <apex:commandButton value="Get Opportunities" action="{!getOpportunities}"  styleClass="searchApp" id="searchApp" />
+                                <apex:pageblockTable value="{!listOpprt}" var="p" rendered="{!IF(listOpprt.size>0,true,false)}" id="etab" >
+                                 <apex:column headerValue="Account Name" style="width: 10%">
+                                <apex:outputField value="{!p.Account.Name}"/>
+                                </apex:column>
+                                <apex:column headerValue="Opportunity " style="width: 10%">
+                                <apex:outputField value="{!p.Name}"/>
+                                </apex:column>
+                                <apex:column headerValue="Quote Amount" style="width: 10%">
+                                <apex:outputField value="{!p.Quote__c}"/>
+                                </apex:column>
+                                </apex:pageBlockTable>
+                            </apex:outputPanel>
+                        </apex:pageBlockSection>
+                        </apex:PageBlock>
+               </apex:outputPanel>
+ </apex:form>
+                                   
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>
