@@ -1,11 +1,11 @@
 @isTest
             public class OpportunityControllerTest {
             private Static String PAGE1='Page.getOpportunities';
-             public testMethod static void Test1(){
+             public testMethod static void loadOpportunitiesTest(){
              test.StartTest();
              Test.setCurrentPageReference(new PageReference(PAGE1));
-             Opportunity_Controller  opportunity_Controller   = new Opportunity_Controller();
-             opportunity_Controller.getOpportunities();
+             OpportunityController  opportunityController   = new OpportunityController();
+             opportunityController.getOpportunities();
              test.stopTest();     
             
              

@@ -1,4 +1,4 @@
-<apex:page controller="Opportunity_Controller">
+<apex:page controller="OpportunityController">
 <apex:form >
   <!-- Begin Default Content REMOVE THIS -->
    <apex:outputPanel id="mainPanel">
